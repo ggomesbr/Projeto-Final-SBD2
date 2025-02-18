@@ -1,0 +1,64 @@
+Este projeto faz parte do Trabalho Final da disciplina de Bancos de Dados 2 (2024.2) e tem como objetivo simular um sistema de recomendação de músicas. Para isso, utilizamos:
+
+- Conjunto de dados: '10+ M. Beatport Tracks / Spotify' (disponível no Kaggle).  
+- Software de mineração de dados: **Orange** (versão 3.38.1).
+
+A seguir, apresentamos um passo a passo para executar o projeto e entender cada etapa do fluxo de análise.
+
+-------------------------------------------------------------------------------
+1. ABRINDO O PROJETO NO ORANGE
+-------------------------------------------------------------------------------
+1.1. Localize a pasta 'Orange3-3.38.1' e clique no atalho para o executável **Orange**.
+
+1.2. Ao iniciar o software, selecione **Open** e escolha o arquivo  'TF_B12_MiguelBarbosa_fimPratico.ows', que está no mesmo diretório deste arquivo README.
+
+-------------------------------------------------------------------------------
+2. PROCESSAMENTO AUTOMÁTICO
+-------------------------------------------------------------------------------
+- Assim que o arquivo .ows for aberto, o Orange inicia o processamento automaticamente.  
+- Você notará pequenas bolinhas vermelhas nas extremidades das conexões do fluxo, indicando que o processo está em andamento.  
+
+**ATENÇÃO:**  
+- Este processamento é pesado e utiliza muita memória RAM, podendo demorar de 5 a 10 minutos, dependendo da potência do seu computador.  
+- É comum o software travar ou apresentar lentidão nesse período.
+
+-------------------------------------------------------------------------------
+3. ETAPAS DE ANÁLISE
+-------------------------------------------------------------------------------
+O projeto é dividido em três etapas principais, conforme ilustrado no fluxo geral, representada na imagem '1-visao_geral', disponível na mesma pasta deste arquivo:
+
+3.1. PREPARAÇÃO E LIMPEZA DE DADOS (imagem '2-preparação_limpeza')  
+   - Junção das tabelas para obter somente os dados relevantes (bpm, duração da faixa e data de lançamento).  
+   - Nesta etapa, juntamos as tabelas e selecionamos os dados relevantes para garantir que somente informações úteis para o projeto permaneçam.
+
+3.2. PROCESSAMENTO (imagem '3-processamento')  
+   - Aplicamos o algoritmo **k-means** para agrupar as músicas em 6 clusters, com base nas variáveis selecionadas (bpm, duração e data de lançamento).  
+   - Esta é a etapa mais demorada, pois envolve o cálculo dos clusters em todo o conjunto de dados.
+
+3.3. RESULTADO E SELEÇÃO DO CLUSTER  
+   - Após a geração dos 6 clusters, foi escolhido o **Cluster 6** por apresentar a melhor pontuação no resultado do k-means.  
+   - Por limitações de hardware, optamos por limitar a quantidade de amostras desse cluster usando o **Data Sampler** do Orange, para reduzir a carga de processamento na comparação das músicas.
+
+-------------------------------------------------------------------------------
+4. GERANDO A RECOMENDAÇÃO
+-------------------------------------------------------------------------------
+4.1. Verifique se há uma linha tracejada entre as etapas 'Distance Matrix' e 'Neighbors'.  
+   - Se houver, clique em **Distance Matrix** e, na tela que abrir, selecione todas as células (canto superior esquerdo) para preencher a matriz de distâncias, de acordo com a imagem '4-matriz_dados'.  
+   - Isso garante que o cálculo de distância seja completado, completando a linha tracejada.
+
+4.2. Selecione uma música e veja as recomendações.
+   - Clique nas etapas 'Selecione uma música' e 'Recomendações' para abrir as tabelas de músicas e recomendações.
+   - Na etapa 'Selecione uma música', escolha qualquer faixa na lista.  
+   - Em 'Recomendações', aparecerão **10 músicas** consideradas mais similares à faixa selecionada com base na mineração realizada (imagem '5-recomendacao').
+
+-------------------------------------------------------------------------------
+5. OBSERVAÇÕES FINAIS
+-------------------------------------------------------------------------------
+- As imagens de referência mencionadas (1-visao_geral, 2-preparação_limpeza, 3-processamento, 4-matriz_dados e 5-recomendacao) estão no mesmo diretório deste arquivo e ilustram cada etapa.  
+- Se o software demorar ou travar, aguarde alguns minutos e evite clicar na tela; o processamento é realmente pesado.  
+- Qualquer dúvida adicional, entre em contato com o grupo B12.
+
+-------------------------------------------------------------------------------
+FIM
+-------------------------------------------------------------------------------
+Grupo B12 - Trabalho Final de Bancos de Dados 2 (2024.2)
