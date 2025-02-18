@@ -11,8 +11,14 @@
 --
 -- PROJETO => 01 Base de Dados
 --         => 07 Tabelas
+--         => 03 Views
+--
 -- ----------------------------------------------------------------------------------------
 USE beatport;
+
+DROP VIEW ArtistAlbumCount;
+DROP VIEW TopLabels;
+DROP VIEW MostProductiveArtists;
 
 DROP TABLE ARTIST_TRACK;
 DROP TABLE ARTIST_ALBUM;
