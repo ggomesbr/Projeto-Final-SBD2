@@ -6,6 +6,13 @@ Este projeto faz parte do Trabalho Final da disciplina de Bancos de Dados 2 (202
 A seguir, apresentamos um passo a passo para executar o projeto e entender cada etapa do fluxo de análise.
 
 -------------------------------------------------------------------------------
+0. Fazendo download dos csvs
+-------------------------------------------------------------------------------
+0.1 Agora entre no url: https://www.kaggle.com/datasets/mcfurland/10-m-beatport-tracks-spotify-audio-features?select=bp_genre.csv,
+e faça o download dos seguintes csvs que serao usados no processo: bp_artist.csv, bp_artist_release.csv, bp_artist_track.csv, bp_genre.csv, bp_label.csv, bp_track.csv, bp_release.csv.
+
+Lembrando de que esse arquivo deve estar na mesma pasta dos documentos ".csv" para que funcione corretamente.
+-------------------------------------------------------------------------------
 1. ABRINDO O PROJETO NO ORANGE
 -------------------------------------------------------------------------------
 1.1. Localize a pasta 'Orange3-3.38.1' e clique no atalho para o executável **Orange**.
@@ -15,7 +22,7 @@ A seguir, apresentamos um passo a passo para executar o projeto e entender cada 
 -------------------------------------------------------------------------------
 2. PROCESSAMENTO AUTOMÁTICO
 -------------------------------------------------------------------------------
-- Assim que o arquivo .ows for aberto, o Orange inicia o processamento automaticamente.  
+- Assim que o arquivo .ows for aberto, o Orange inicia o processamento automaticamente.Caso não ocorra de maneira automática, carregue os arquivos csv nas tabelas respectivas. 
 - Você notará pequenas bolinhas vermelhas nas extremidades das conexões do fluxo, indicando que o processo está em andamento.  
 
 **ATENÇÃO:**  
